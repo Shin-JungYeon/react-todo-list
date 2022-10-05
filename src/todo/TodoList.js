@@ -1,14 +1,13 @@
-import { TodoListItem } from "./TodoListItem";
+import TodoItem from "./TodoItem";
+import '../assets/css/TodoList.css';
 
-function TodoList({todos}) {
+function TodoList({todos, onDel, onToggle}) {
     return(
-        <ul className="TodoList">
-            {todos.map((todo) => {
-                <TodoListItem
-                  todo = {todo}
-                  key = {todo.id}
-                />
-            })}
+        <ul className='TodoList'>
+            {
+                todos.map((todo) => <TodoItem key={todo.id}
+                todos={todo} onDel={onDel} onToggle={onToggle}/>)
+            }
         </ul>
     );
 }
