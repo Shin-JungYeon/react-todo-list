@@ -5,8 +5,14 @@ function TodoList({todos, onDel, onToggle}) {
     return(
         <ul className='TodoList'>
             {
-                todos.map((todo) => <TodoItem key={todo.id}
-                todos={todo} onDel={onDel} onToggle={onToggle}/>)
+                todos.map((todo) =>
+                    <TodoItem
+                        key={todo.id}
+                        todos={todo}
+                        onDel={onDel}
+                        onToggle={onToggle}
+                    />
+                )
             }
         </ul>
     );

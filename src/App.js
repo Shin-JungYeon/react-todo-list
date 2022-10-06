@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Todos />
+        <Todos /> {/* 컴포넌트 이름은 대문자로 시작 */}
       </header>
     </div>
   );

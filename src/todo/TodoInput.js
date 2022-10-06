@@ -3,7 +3,7 @@ import {MdAddCircle} from 'react-icons/all';
 import '../assets/css/TodoInput.css';
 
 const TodoInput = ({onAdd}) => {
-    const textRef = useRef();
+    const textRef = useRef(null);
     const [text, setText] = useState('');
 
     const changeInput = (evt) => {
@@ -11,8 +11,8 @@ const TodoInput = ({onAdd}) => {
         setText(value);
     }
 
-    const onSubmit = (evt) => {
-        evt.preventDefault()
+    const onSubmit = (e) => {
+        e.preventDefault()
 
         if(!text) return;
 
@@ -24,7 +24,12 @@ const TodoInput = ({onAdd}) => {
 
     return (
         <form className='TodoInput' onSubmit={onSubmit}>
-            <input type='text' value={text} onChange={changeInput} ref={textRef} />
+            <input
+                type='text'
+                value={text}
+                onChange={changeInput}
+                ref={textRef}
+            />
             <button>
                 <MdAddCircle className='icon' size='50' />
             </button>
